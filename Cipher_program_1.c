@@ -5,11 +5,11 @@
 / based off of r/dailyprogrammer's challenge #3
 / C programming language.
 / Matthew Yu
-/ 12/28/17
-/ ERR - IO doesn't work. problems with buffer? etc, abandoned.
+/ 12/29/17
+/ V1.1 Working
 / This program will prompt for a message to be encrypted or decrypted.
 / It uses an alphabetical caesar cipher and can ignore numbers,
-/ symbols, and whitespace.
+/ symbols, and/or whitespace. Currently set to incorporate spaces, and common punctuation.
 **/
 #define SHIFT 1
 #define msgLength 250
