@@ -42,7 +42,7 @@ int main()
 /**
 *  encrypt takes a String input as a series of chars with \n terminator
 *  and adds SHIFT to the ascii value of each char until the entire substring
-*  is encrypted. It then returns the array of chars.
+*  is encrypted. It then prints out the array of chars.
 **/
 void encrypt()
 {
@@ -83,9 +83,7 @@ void encrypt()
 /**
 *  decrypt takes a String input as a series of chars with \n terminator
 *  and removes SHIFT to the ascii value of each char until the entire substring
-*  is encrypted. It then returns the array of chars.
-*  @param stringArray char array of input
-*  return stringArray char array of input
+*  is decrypted. It then prints out the array of chars.
 **/
 void decrypt()
 {
