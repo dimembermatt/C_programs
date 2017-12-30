@@ -1,0 +1,3 @@
+C:/Users/matth/CLionProjects/Prime_num_program_1/cmake-build-debug/CMakeFiles/Prime_num_program_1.dir
+C:/Users/matth/CLionProjects/Prime_num_program_1/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/matth/CLionProjects/Prime_num_program_1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
