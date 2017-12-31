@@ -17,7 +17,7 @@ int checkEntry(int option, char entry[]);
 int main()
 {
     char name[50], entry[50];
-    int flag = 1, check, choice, day, area, key, death, deathcount = 0, daycount = 0, achievement = 0;
+    int flag = 1, check, choice, day, area, key, death, deathcount = 0, daycount = 0, timeAchievement = 0, deathAchievement = 0;
     //double luck;
 
     printf("Hello, World!\nHello young adventurer, what is your name?");
@@ -67,23 +67,33 @@ int main()
                             choice = 1;
                         else if(strcmp(entry, "right\n") == 0)
                             choice = 2;
+                        else if(strcmp(entry, "stop\n") == 0)
+                            choice = 3;
+                        else if(strcmp(entry, "death25\n") == 0)
+                        {
+                            deathcount = 25;
+                            area = -1;
+                        }
                         else
-                            choice = 0;
+                        {
+                            day = 25;
+                            area = -1;
+                        }
                     }
                     else
                         printf("Please enter \"left\", \"right\", or \"stop\". ");
                 } while (check == 0);
 
-                if(choice == 0)
+                if(choice == 1)
+                    area = 1;
+                else if(choice == 2)
+                    area = 2;
+                else if(choice == 3)
                 {
                     printf("The news the next day: \"%s arrested for treason and hanged to death.\"\n", name);
                     printf("YOU DIED ON DAY %i\n", day);
                     death = 1;
                 }
-                else if(choice == 1)
-                    area = 1;
-                else if(choice == 2)
-                    area = 2;
                 else
                 {
                     printf("Adventurer, it's dangerous, you shouldn't be here! Err: badchoice\n");
@@ -327,8 +337,10 @@ int main()
                 //hide
                 day++;
                 printf("You live a day of hiding away in the forest, scavenging for nuts and hunting for small animals\n");
-                if(day >20)
-                    printf("Hey, %s, how long are you intending to lounge around?\nAre you waiting for the kingdom to fall?", name);
+                if(day > 10)
+                    printf("You shiver in your boots as you're pissing somewhere on the mountain.");
+                if(day > 20)
+                    printf("Hey, %s, how long are you intending to lounge around?\nAre you waiting for the kingdom to fall? ", name);
                 printf("Should you wait it out some more?\nOr go find your partner? Or search for another?\n");
                 printf("Enter (\"hide\") or (\"search\") or (\"recruit\"). ");
                 do{
@@ -357,7 +369,16 @@ int main()
                         area = 8;
                 }
                 else if(choice == 1)
-                    area = 2;
+                {
+                    if(day > 10)
+                    {
+                        area = 8;
+                        printf("It's been so long, don't you think he's already left?\n");
+                    }
+                    else
+                        area = 2;
+                }
+
                 else if(choice == 2)
                     area = 3;
                 else
@@ -370,7 +391,7 @@ int main()
                 printf("Forces beyond your control bring you back to the castle.\n");
                 printf("Astonishingly, the castle was destroyed by a gigantic dragon.\n");
                 printf("You rummaged through the rubble for the vault.\n");
-                printf("The dragon took all the look. Good job %s!\n", name);
+                printf("The dragon took all the loot. Good job %s!\n", name);
                 printf("You decide to live happily ever after, miserably poor.\n");
                 area = -1;
             }
@@ -388,20 +409,31 @@ int main()
             deathcount++;
         daycount = daycount + day;
 
-        printf("\n\nGame over. You have died %i times. You have played for a total of %i day(s).\n", deathcount, daycount);
-        if(achievement == 1)
-            printf("\n\nAchievement: Abnormally long shelf life.\n");
+        //game over
+        printf("\n\nGame over. You have died %i times. You have played for a total of %i day(s).\n\n\n", deathcount, daycount);
+        //achievements
+        if(timeAchievement == 1)
+            printf("Achievement: Abnormally long shelf life.\n");
+        if(deathAchievement == 1)
+            printf("Achievement: Masochist.\n");
+        //hints and eggs
         if(deathcount == 5)
             printf("Did you know? You could just 'give up' once you run away.\n");
         if(deathcount == 10)
             printf("Did you know? You could 'hide' if things go south.\n");
         if(deathcount == 15)
             printf("When you see a shady guy, don't you want to just 'punch him'?\n");
-        if(daycount >= 25)
+        if(deathcount == 25)
+        {
+            printf("You died so many times the universe exploded.\n");
+            printf("Have a cookie for the next death.\n");
+            deathAchievement = 1;
+        }
+        if(daycount == 25)
         {
             printf("Either you're very persistent at playing this game or you got stuck in an infinite loop.\n");
             printf("Well anyways, here's a cookie on the next run!\n");
-            achievement ++;
+            timeAchievement = 1;
         }
         printf("Would you like to play again? Enter 1 for yes, 0 for no. ");
         do{
@@ -447,7 +479,7 @@ int checkEntry(int option, char entry[])
     //area 0 check
     else if(option == 0)
     {
-        if(strcmp(entry, "left\n") != 0 && strcmp(entry, "right\n") != 0 && strcmp(entry, "stop\n") != 0)
+        if(strcmp(entry, "left\n") != 0 && strcmp(entry, "right\n") != 0 && strcmp(entry, "stop\n") != 0 && strcmp(entry, "death25\n") != 0 && strcmp(entry, "day25\n") != 0)
             return 0;
         else
             return 1;
