@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/matth/CLionProjects/Degree_Planner_and_Audit_Program_1/CourseEntry.c
+stdio.h
+-
+string.h
+-
+CourseEntry.h
+C:/Users/matth/CLionProjects/Degree_Planner_and_Audit_Program_1/CourseEntry.h
+
+C:/Users/matth/CLionProjects/Degree_Planner_and_Audit_Program_1/CourseEntry.h
+
+C:/Users/matth/CLionProjects/Degree_Planner_and_Audit_Program_1/Planner_and_Audit.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+Planner_and_Audit.h
+C:/Users/matth/CLionProjects/Degree_Planner_and_Audit_Program_1/Planner_and_Audit.h
+
+C:/Users/matth/CLionProjects/Degree_Planner_and_Audit_Program_1/Planner_and_Audit.h
+
+C:/Users/matth/CLionProjects/Degree_Planner_and_Audit_Program_1/main.c
+stdio.h
+-
+string.h
+-
+Planner_and_Audit.h
+C:/Users/matth/CLionProjects/Degree_Planner_and_Audit_Program_1/Planner_and_Audit.h
+windows.h
+-
+

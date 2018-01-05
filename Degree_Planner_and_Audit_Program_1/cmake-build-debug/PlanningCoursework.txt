@@ -1,0 +1,36 @@
++Fall2017
+EE 302
+EE 306
+M 408D
+CC 302
+
++Spring2018
+UGS 302
+EE 319K
+M 340L
+PHY 303K
+PHY 103M
+
++Summer2018
+GOV 310L
+GOV 312
+
++Fall2018
+
++Spring2019
+
++Summer2019
+
++Fall2019
+
++Spring2020
+
++Summer2020
+
++Fall2020
+
++Spring2021
+
++Summer2021
+
+EOF
