@@ -10,8 +10,8 @@ void getPath(char * mfilen, int type);
 void readFile(char * fileName);
 void appendFile(char * filePath);
 void closeFile();
-void writeFile(char * filePath);
-void closeWriteFile(char *inFilePath, char *copyFilePath);
+void writeFile(char * filePath, char * copyFilePath);
+void closeWriteFile(char * inFilePath, char * copyFilePath);
 
 //Official Coursework functions
 void displayCoursework();
@@ -25,6 +25,6 @@ double getCompleteRate();
 
 //Schedule Planning functions
 void displaySchedule();
-int addPCourse(char courseName[], char creditHour[], char semester[], char year[]);
+int addPCourse(char courseName[], char semester[]);
 int removePCourse(char courseName[]);
 #endif //PLANNER_AND_AUDIT_H_

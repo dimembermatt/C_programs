@@ -12,13 +12,11 @@
  * c programming language.
  * Matthew Yu
  * 1/2/18
- * V1
+ * V1.1 WORKING
  */
 
 /**
  * TODO:
- * implementation of PlanningCoursework.txt, multiple file management
- * implementation of option: plan coursework
  * bug checks
  * error handling checks
  */
@@ -147,14 +145,12 @@ int main()
                     displaySchedule();
                 else if (strcmp(input, "2\n") == 0) //Add Course to Schedule
                 {
-                    char semester[15], creditHr[3], year[5];
+                    char semester[15];
                     printf("Enter course name. (i.e., EE306)\n");
                     fgets(input, INP_BUFF, stdin);
-                    printf("Enter credit hours. (first digit of course name)\n");
-                    fgets(creditHr, sizeof(creditHr), stdin);
-                    printf("Enter Semester predicted to take course. (from 'Fall 2017' to 'Spring 2021')\n");
-                    scanf("%s %s", semester, year);
-                    if (addPCourse(input, creditHr, semester, year) == 1)
+                    printf("Enter Semester predicted to take course. (from 'Fall2017' to 'Spring2021')\n");
+                    fgets(semester, sizeof(semester), stdin);
+                    if (addPCourse(input, semester) == 1)
                         displaySchedule();
                     else
                         printf("Error. addCourse method -> fprintf had <=0 elements found.\n");
@@ -166,7 +162,7 @@ int main()
                     if (removePCourse(input) == 1)
                         displaySchedule();
                     else
-                        printf("Error. No course found.\n");
+                        printf("Error.\n");
                 }
                 else //Exit Window
                     break;
@@ -178,13 +174,13 @@ int main()
             int hours;
             GPA = getGPA();
             hours = getHours();
-            printf("Your GPA is: %f cumulative, from %i hours of coursework.\n", GPA/hours, hours);
+            printf("Your GPA is: %.2f cumulative, from %i hours of coursework.\n", GPA/hours, hours);
         }
         else if(strcmp(input, "4\n") == 0) //Check Completion Rate
         {
             double completionRate;
             completionRate = getCompleteRate();
-            printf("Your completion rate is %f percent.\n", completionRate);
+            printf("Your completion rate is %.1f%%.\n", completionRate);
         }
         else if(strcmp(input, "5\n") == 0) //Exit Application
         {
