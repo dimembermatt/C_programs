@@ -1,6 +1,10 @@
 # C_programs
 A repository for various C programs.
 
+Degree_Planner_and_Audit_Program_1 - allows the user to read and populate text files with official coursework and planned coursework as well as check the GPA and rate of progress to diploma (EE degree only). Users can add courses, remove courses, and edit courses.
+
+Text_RPG_1 - a simple text rpg program that takes user input to make decisions about the story's progression.
+
 Cipher_program_1 - shifts the chars in a given message using a primitive Caesar cipher. Encrypts and decrypts.
 
 IO_program_1 - simple IO program that asks for name, age, and username and echoes it back.
