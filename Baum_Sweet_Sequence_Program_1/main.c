@@ -14,6 +14,8 @@
 / which should be >= 0, and it outputs a Baum Sweet Sequence for that number or numbers 0 - n.
 / It is recommended to not run numbers higher than a couple thousand for 0 - n. Complexity is
 / at least O(n).
+/
+/ TODO: optimize for loop in BaumSweet method. from 0-n bit shifts to 0-highest bit placement shifts
 **/
 int BaumSweet(long n);
 int main()
@@ -77,15 +79,16 @@ int main()
  */
 int BaumSweet(long n)
 {
-    int counter = 0, shift = 0, ret = 1;
-    if (!n)
-        n = 0;
+    int num = n, counter = 0, shift = 0, ret = 1, maxShift;
+
     while (n >>= 1)
         ret <<= 1;
-    n = ret;
-    for(shift; shift <= n; shift ++)
+    maxShift = ret;
+
+
+    for(shift; shift <= maxShift; shift ++)
     {
-        if((n >> shift)% 2 == 0)
+        if((num >> shift)% 2 == 0)
             counter++;
         else
         {
