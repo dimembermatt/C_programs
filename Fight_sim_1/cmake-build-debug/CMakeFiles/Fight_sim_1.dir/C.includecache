@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/matth/CLionProjects/Fight_sim_1/main.c
+stdio.h
+-
+string.h
+-
+time.h
+-
+stdlib.h
+-
+
