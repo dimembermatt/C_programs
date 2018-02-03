@@ -1,0 +1,3 @@
+C:/Users/matth/CLionProjects/WildfireScienceProjectAlgorithm_Cver/cmake-build-debug/CMakeFiles/WildfireScienceProjectAlgorithm_Cver.dir
+C:/Users/matth/CLionProjects/WildfireScienceProjectAlgorithm_Cver/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/matth/CLionProjects/WildfireScienceProjectAlgorithm_Cver/cmake-build-debug/CMakeFiles/rebuild_cache.dir
