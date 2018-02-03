@@ -278,7 +278,7 @@ double getLetterVal(char letterGrade[])
     int switchResult = 0;
     double result;
     //ASCII value manipulation of letter grade to create unique int switch cases
-    if(strstr(letterResult, "CR") != NULL)
+    if(strstr(letterResult, "CR") != NULL || strstr(letterResult, "NA") != NULL)
         switchResult = 1;
     else if(letterResult[1] == 45)
         switchResult = letterResult[0] + letterResult[1] + 10;
@@ -289,7 +289,7 @@ double getLetterVal(char letterGrade[])
 
     switch(switchResult)
     {
-        case 1: //CR
+        case 1: //CR/NA
             result = 0.00;
             break;
         case 65: //A
@@ -346,7 +346,7 @@ int getHours()
     readFile(filePath);
     while(fscanf(infile, "%s%s%s", buff, letterGrd, creditHr) != EOF)
     {
-        if(strstr(letterGrd, "CR") == NULL)
+        if(strstr(letterGrd, "CR") == NULL && strstr(letterGrd, "NA") == NULL)
             hours = hours + atoi(creditHr);
     }
     closeFile();

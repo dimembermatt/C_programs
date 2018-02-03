@@ -13,6 +13,13 @@
  * Matthew Yu
  * 1/2/18
  * V1.1 WORKING
+ * 1/28/18
+ * V1.2 Fix to Check GPA, added NA coursework to grade letters that don't count to GPA, hours
+ *
+ * DOCUMENTATION NOTICE: This program requires the files OfficialCoursework.txt
+ * and PlanningCoursework.txt in the same folder as the .exe. Functions of the
+ * program will not work if either of these files are not included.
+ *
  */
 
 /**
@@ -174,7 +181,7 @@ int main()
             int hours;
             GPA = getGPA();
             hours = getHours();
-            printf("Your GPA is: %.2f cumulative, from %i hours of coursework.\n", GPA/hours, hours);
+            printf("Your GPA is: %.2f cumulative, from %i hours of gradeable coursework.\n", GPA/hours, hours);
         }
         else if(strcmp(input, "4\n") == 0) //Check Completion Rate
         {

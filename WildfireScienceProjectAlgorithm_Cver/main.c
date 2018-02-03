@@ -31,6 +31,10 @@
  * "PDSI, Avg Temp, NDVI, Observed Acreage Burned \n"
  * A WildfireScienceProjectAlgorithm has a File Path and a Delimiter.
  *
+ * DOCUMENTATION NOTICE: Functions of this program will not work if the
+ * required files are not included: DataN20082012N0Event.tsv.
+ * Please include this file in the same folder as the .exe when downloading.
+ *
  * TODO:
  * create cli input for array size, coefficient increments, check bounds from said increments?
  * fix variable descriptions
