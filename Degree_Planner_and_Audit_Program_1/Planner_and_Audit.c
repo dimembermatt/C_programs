@@ -430,7 +430,7 @@ void displaySchedule()
         printf("\n");
     }
     //format print of second third of array
-    printf("Su19\tF19\tS20\tF20\tS21\tSu21\n");
+    printf("F19\tS20\tSu20\tF20\tS21\tSu21\n");
     for(row = 0; row < MAX_CLASSES; row++)
     {
         for(column = 6; column < (NUMBER_OF_SESSIONS); column++)

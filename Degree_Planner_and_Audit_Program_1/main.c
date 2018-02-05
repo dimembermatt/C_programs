@@ -11,10 +11,11 @@
  *
  * c programming language.
  * Matthew Yu
- * 1/2/18
- * V1.1 WORKING
- * 1/28/18
+ * V1.1 created 1/2/18
+ * V1.3 WORKING 2/5/18
+ *
  * V1.2 Fix to Check GPA, added NA coursework to grade letters that don't count to GPA, hours
+ * V1.3 Bugfix issue with planning coursework function, adding courses to Spring2019 and beyond prints a semester late, duplicate Summer2019
  *
  * DOCUMENTATION NOTICE: This program requires the files OfficialCoursework.txt
  * and PlanningCoursework.txt in the same folder as the .exe. Functions of the
