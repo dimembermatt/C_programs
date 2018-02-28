@@ -2,12 +2,14 @@
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
+#include <stdint.h>
 
 /**
  * Maze Game #1
  * C
  * @author: Matthew Yu
  * @version 1.1
+ * @version 1.2 2/27/18 - bugfix for when direction priority makes algorithm double back on itself coming out of a dead end, which warps pointer to some spot, added delay funct
  *
  *
  * This program generates a maze within a 'box' of tiles. The starting point of the maze
@@ -16,15 +18,15 @@
  * The walls of the maze are other tiles.
  * The Actor can be a either a player who controls the movement of the Actor, or a
  * computer Actor that uses some algorithm to reach the end tile.
- * TODO: bugfix - terminal screen does not update all the tiles correctly bugfix - crashes 50 % of the time
  * TODO: add functionality for user, play maze game - update problem
  */
-#define ROWS 31
-#define COLS 31
+#define ROWS 51
+#define COLS 51
 
 char maze[ROWS][COLS];
 int liveCellX, liveCellY;
 
+void delay(double numberOfSeconds);
 void generateMaze();
 int mazeProgression(int currCellR, int currCellC);
 int runComputerGameSimple(int currentCellR, int currentCellC);
@@ -69,7 +71,7 @@ int main()
     while(!endTile)
     {
         //display maze
-        /**
+
         for(int row = 0; row < ROWS; row ++)
         {
             for(int col = 0; col < COLS; col++)
@@ -78,15 +80,19 @@ int main()
                 printf("%s ", &tile);
             }
             printf("\n");
-        }**/
+        }
 
         //make move
         endTile = runComputerGameSimple(liveCellY, liveCellX);
+        //delay(.1);
+
         //printf("\n\n");
-        //system("cls");
+        if(tile != 'E')
+            system("cls");
     }
 
     //display maze END
+
     for(int row = 0; row < ROWS; row ++)
     {
         for(int col = 0; col < COLS; col++)
@@ -214,7 +220,7 @@ int mazeProgression(int currCellR, int currCellC)
  */
 int runComputerGameSimple(int currentCellR, int currentCellC)
 {
-    int dN = 0, dE = 0, dS = 0, dW = 0; //2 is usable, 1 is usable (priority), 0 is unusable
+    int dN = 0, dE = 0, dS = 0, dW = 0, intersectionCtr = 0, deadEndCtr = 0; //2 is usable, 1 is usable (priority), 0 is unusable
     char mark = maze[currentCellR][currentCellC];
     //check current cell if End: if it is, exit method and return 0.
     if(maze[currentCellR][currentCellC] == 'E')
@@ -224,6 +230,21 @@ int runComputerGameSimple(int currentCellR, int currentCellC)
         mark = '.';
     if(maze[currentCellR][currentCellC] == '.')
         mark = '-';
+
+    //revise current cell mark if intersection
+    if(maze[currentCellR - 1][currentCellC] != '#')
+        intersectionCtr ++;
+    if(maze[currentCellR + 1][currentCellC] != '#')
+        intersectionCtr ++;
+    if(maze[currentCellR][currentCellC - 1] != '#')
+        intersectionCtr ++;
+    if(maze[currentCellR][currentCellC + 1] != '#')
+        intersectionCtr ++;
+    if(intersectionCtr >= 3)
+        mark = '.';
+
+    //set for next move
+    maze[currentCellR][currentCellC] = mark;
 
     //check directions
     if(maze[currentCellR - 1][currentCellC] == ' ' || maze[currentCellR - 1][currentCellC] == 'E')
@@ -243,8 +264,25 @@ int runComputerGameSimple(int currentCellR, int currentCellC)
     if(maze[currentCellR][currentCellC - 1] == '.')
         dW = 2;
 
-    //set for next move
-    maze[currentCellR][currentCellC] = mark;
+    //debug: if dead end, make inaccessible current tile
+    if(dN == 0)
+        deadEndCtr ++;
+    if(dE == 0)
+        deadEndCtr ++;
+    if(dS == 0)
+        deadEndCtr ++;
+    if(dW == 0)
+        deadEndCtr ++;
+    if(deadEndCtr > 2)
+    {
+        if(deadEndCtr == 4)
+        {
+            printf("No way out. Fatal error.\n");
+            printf("Cell location north:%c, east:%c, south:%c, west:%c, center:%c, center pos: %i, %i\n", maze[currentCellR][currentCellC + 1], maze[currentCellR + 1][currentCellC], maze[currentCellR - 1][currentCellC], maze[currentCellR][currentCellC - 1], maze[currentCellR][currentCellC], currentCellR, currentCellC);
+        }
+        else
+            maze[currentCellR][currentCellC] = '-';
+    }
 
     //high priority
     if(dN == 1)
@@ -276,10 +314,19 @@ int runComputerGameSimple(int currentCellR, int currentCellC)
     {
         liveCellY += 1;
     }
-    else //dW
+    else if(dW == 2)
     {
         liveCellX -= 1;
     }
+    else
+    {
+        //maze[currentCellR][currentCellC] = 'F';
+        printf("Fatal error\n");
+        printf("Directions filled North:%i, East:%i, South:%i, West:%i\n", dN, dE, dW, dS);
+        printf(" %c \n%c%c%c\n %c\n", maze[currentCellR - 1][currentCellC], maze[currentCellR][currentCellC - 1], maze[currentCellR][currentCellC], maze[currentCellR + 1][currentCellC], maze[currentCellR][currentCellC + 1]);
+        exit(0);
+    }
+
     return 0;
     //Tremaux's algorithm
     //check direction of walls and paths
@@ -290,4 +337,11 @@ int runComputerGameSimple(int currentCellR, int currentCellC)
     //priority of directions: if north is free, go north. if north is not free, go east. if north and east are not free, go west. and so on. there must always be one direction open.
     //priority of marking: give cells priority if direction is ' ' compared to '.'.
         //mark current spot as used '.'. set liveCellX and liveCellY to new coordinates.
+}
+
+void delay(double numberOfSeconds)
+{
+    double milliSeconds = 1000 * numberOfSeconds;
+    clock_t startTime = clock();
+    while(clock() < startTime + milliSeconds);
 }
