@@ -1,0 +1,50 @@
+else if(buff == "2")
+ {
+     while (!endTile)
+     {
+         //check if end of game
+         if(maze[liveCellX][liveCellY] != 'E')
+         {
+             int valid = 0;
+             //make move
+             do{
+
+                 printf("Enter a direction to move in!\n");
+                 scanf("%s", buff);
+                 valid = playGame(buff[0]);
+                 if(valid != 1)
+                     printf("Invalid input.\n");
+             }while(valid != 1);
+
+             //display maze
+             for (int row = 0; row < ROWS; row++) {
+                 for (int col = 0; col < COLS; col++) {
+                     tile = maze[row][col];
+                     printf("%s ", &tile);
+                 }
+                 printf("\n");
+             }
+             delay(.2);
+
+             if (tile != 'E')
+                 system("cls");
+         }
+         else
+             endTile = 1;
+
+     }
+     time(&stop);
+     printf("Time elapsed: %f\n", difftime(stop, start));
+     buff[0] = '\0';
+ }
+
+
+
+ //display maze END
+ for (int row = 0; row < ROWS; row++) {
+     for (int col = 0; col < COLS; col++) {
+         tile = maze[row][col];
+         printf("%s ", &tile);
+     }
+     printf("\n");
+ }
