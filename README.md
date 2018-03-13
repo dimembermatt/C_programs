@@ -20,6 +20,8 @@ IO_program_2 - simple IO program that takes two strings and removes the letters 
 
 LoadingBar_1 - simple IO program playing around with the carriage return and a wait() function.
 
+Packet_Assembler_Program_1 - a program that is given a text file of scrambled information packets and unscrambles it in order received.
+
 Pass_generator_1 - creates a set of pseudo-randomly generated strings based on a given input of how many characters and how many passwords.
 
 Permutation_program_1 - outputs all the possible permutations of an input string.
@@ -28,6 +30,7 @@ Prime_num_program_1 - returns all prime numbers below an input integer N. Algori
 
 Text_RPG_1 - a simple text role playing game program that takes user input to make decisions about the story's progression.
 
+Water_Fill_Sim - a simple simulator that emulates water (or probably more appropiately, sand) falling into a 2d box with walls.
 
 
 *Some programs are in a folder instead of just the c program and the executable. The C file can be found in the first level of the folder and the executable in the cmake-build-debug folder.
