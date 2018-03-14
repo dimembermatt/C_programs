@@ -1,0 +1,32 @@
+//format
+0* prompt #1
+1-  number of options
+2-  result[0/default/option #1] consequence flavor txt
+3+    Type //height(0) or love(1) :  union statChange effect (int/long)
+4-  result[option #2] consequence flavor text       //optional
+5+    Type : union statChange effect (int/long)
+6-  result[option #2] consequence flavor txt
+7+    Type : union statChange effect (int/long)
+8-  result[option #3] consequence flavor text       //optional
+9+    Type : union statChange effect (int/long)
+10* prompt #2
+11-  number of options
+12-  result[0/default/option #1] consequence flavor txt
+13+    Type //height(0) or love(1) :  union statChange effect (int/long)
+14-  result[option #2] consequence flavor text       //optional
+15+    Type : union statChange effect (int/long)
+16-  result[option #2] consequence flavor txt
+17+    Type : union statChange effect (int/long)
+18-  result[option #3] consequence flavor text       //optional
+19+    Type : union statChange effect (int/long)
+20* prompt #3
+21-  number of options
+22-  result[0/default/option #1] consequence flavor txt
+23+    Type //height(0) or love(1) :  union statChange effect (int/long)
+24-  result[option #2] consequence flavor text       //optional
+25+    Type : union statChange effect (int/long)
+26-  result[option #2] consequence flavor txt
+27+    Type : union statChange effect (int/long)
+28-  result[option #3] consequence flavor text       //optional
+29+    Type : union statChange effect (int/long)
+...and so on...

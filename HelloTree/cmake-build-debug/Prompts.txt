@@ -1,0 +1,360 @@
+0 A light drizzle appears. Your tree seems to be enjoying it.
+1
+Your tree grows an extra cm!
+0 1
+n/a
+0 0
+n/a
+0 0
+n/a
+0 0
+1 You spread fertiliser on the ground. The tree grows happily.
+1
+Your tree grows an extra two cm!
+0 2
+n/a
+0 0
+n/a
+0 0
+n/a
+0 0
+2 A storm appears, and broke up the top branch of the tree.
+1
+Your tree is stunted by two cm!
+0 -2
+n/a
+0 0
+n/a
+0 0
+n/a
+0 0
+3 You delicately water your tree as usual.
+1
+Your tree's affection increased!
+1 2
+n/a
+0 0
+n/a
+0 0
+n/a
+0 0
+4 Today, the flower buds of your tree bloomed.
+1
+Your tree's height increases by two cm!
+0 2
+n/a
+0 0
+n/a
+0 0
+n/a
+0 0
+5 Today, your singing makes the tree dance more than usual.
+1
+Your tree's affection increased!
+1 3
+n/a
+0 0
+n/a
+0 0
+n/a
+0 0
+6 You introduce your good friend to the tree.
+1
+Your tree's affection increased!
+1 2
+n/a
+0 0
+n/a
+0 0
+n/a
+0 0
+7 Tonight you and your tree watch the lunar eclipse.
+1
+The tree grows two cm trying to reach the moon.
+0 2
+n/a
+0 0
+n/a
+0 0
+n/a
+0 0
+8 Nothing particularly amazing happens today.
+1
+The tree grows one cm since it's bored.
+0 1
+n/a
+0 0
+n/a
+0 0
+n/a
+0 0
+9 Today, you accidently hit your head on the tree. It comforts you while snickering silently.
+1
+Your tree's affection increased!
+1 2
+n/a
+0 0
+n/a
+0 0
+n/a
+0 0
+10 You spend today cloud gazing with your tree.
+1
+Your tree's affection increased!
+1 3
+n/a
+0 0
+n/a
+0 0
+n/a
+0 0
+11 Some hoodlums are attempting to break off your tree's limbs for sword sticks. Do you desperately protect your tree (a), tell the hoodlums off (b), or look away (c)?
+3
+Your tree appreciates your sacrifice. Affection increased!
+1 5
+Your tree was scared, but you helped it out of a bad situation. Affection increased!
+1 3
+Your tree is sad that you didn't protect it. Affection decreased.
+1 -3
+n/a
+0 0
+12 A new game comes out. Should you spend today to play it (a) or spend time with your tree (b)?
+2
+Your tree is sad that you neglected it. Affection decreased.
+1 -3
+Your tree is happy that you didn't neglect it. Affection increased.
+1 3
+n/a
+0 0
+n/a
+0 0
+13 Today you're bored. What should you do with your tree? Sing (a), water (b), talk (c), play alone (d).
+4
+Your tree sways gently to your singing. Affection increased.
+1 3
+Your tree slouches a little less. Height grows by two cm.
+0 2
+Your tree listens patiently to you talk. Affection increased.
+1 3
+Your tree is sad you'd rather play alone. Affection decreased.
+1 -3
+14 Today you have a lot of homework. Should you play with the tree (a), or do homework inside (b)?
+2
+Your tree is happy with your decision but thinks you should focus on your studies. Affection increased.
+1 4
+Your tree is sad, but approves of your decision. It strived to grow taller. Height increased by two cm.
+0 2
+n/a
+0 0
+n/a
+0 0
+15 A storm is coming. Will you ignore it (a) or set up protective measures (b)?
+2
+The storm passes, but your tree lost some height. Height decreased by 3 cm.
+0 -3
+Your tree survives the storm. Affection increased.
+1 3
+n/a
+0 0
+n/a
+0 0
+16 You were experimenting with your toy particle collider, but it set the tree on fire? Douse it (a) or let it burn (b)?
+2
+The fire marshal wonders why on earth you have a toy particle collider. The tree's height decreased by 2 cm.
+0 -2
+Your tree continues to burn down until forces beyond your control puts it out. Height decreases by 10 cm.
+0 -10
+n/a
+0 0
+n/a
+0 0
+17 People in suits appear one day wanting your tree. Do you refuse (a), sell (b), or bazooka them (c)?
+3
+They leave. Your tree's affection increased.
+1 5
+Your tree feels betrayed. Affection decreases.
+1 -5
+Murder is bad. Please don't do it. ~your tree.
+1 0
+n/a
+0 0
+18 Today you fall asleep. What do you dream of? Blue skies (a), flying (b), global apocalypse (c), rockets (d).
+4
+You wake up besides your tree as the sun sets. It's beautiful. Affection increases.
+1 4
+You wake up falling out of your tree, breaking branches in the process. Height decreases by 3 cm and head trauma ensues.
+0 -3
+You wake up from bed from your nightmare. You decide to go back to sleep.
+1 0
+Your tree also dreams of rockets. Height increases by 5 cm.
+0 5
+19 You go down to the stream. What do you find? Gold (a), the meaning to life (b), a turtle (c), water (d).
+4
+You show it to your tree, but it doesn't know what do with it. You decide to buy fertiliser and height increases by 5 cm.
+0 5
+Your tree scoffs at your epiphany and debates with you about epistemology. Affection increases.
+1 4
+You show your tree the turtle, but it doesn't know what do with it. You decide to release it.
+1 0
+You use the water to water your tree. Height increases by 3 cm.
+0 3
+20 What do you see one day? Ghosts (a), aliens (b), Morgan Freeman (c), a falling star (d).
+4
+Your tree cowers in fright. Height decreased by 3 cm.
+0 -3
+Aliens made your tree taller through science. Height increased by 5 cm.
+0 5
+Morgan Freeman says hello. Your tree is a big fan. Affection increased.
+1 4
+You wish upon a falling star. Your tree grew by 5 cm.
+0 5
+21(12*) A new game comes out. Should you spend today to play it (a) or spend time with your tree (b)?
+2
+Your tree is sad that you neglected it. Affection decreased.
+1 -3
+Your tree is happy that you didn't neglect it. Affection increased.
+1 3
+n/a
+0 0
+n/a
+0 0
+22(13*) Today you're bored. What should you do with your tree? Sing (a), water (b), talk (c), play alone (d).
+4
+Your tree sways gently to your singing. Affection increased.
+1 3
+Your tree slouches a little less. Height grows by two cm.
+0 2
+Your tree listens patiently to you talk. Affection increased.
+1 3
+Your tree is sad you'd rather play alone. Affection decreased.
+1 -3
+23(14*) Today you have a lot of homework. Should you play with the tree (a), or do homework inside (b)?
+2
+Your tree is happy with your decision but thinks you should focus on your studies. Affection increased.
+1 4
+Your tree is sad, but approves of your decision. It strived to grow taller. Height increased by two cm.
+0 2
+n/a
+0 0
+n/a
+0 0
+24 Hooligans break your tree.
+1
+The tree loses a decimeter of height.
+0 -10
+n/a
+0 0
+n/a
+0 0
+n/a
+0 0
+25 A tornado hits your tree!
+1
+The tree loses two decimeters of height.
+0 -20
+n/a
+0 0
+n/a
+0 0
+n/a
+0 0
+26 A drought comes through and your tree doesn't have enough water.
+1
+Growth is stunted, and the tree shrinks a decimeter to conserve water.
+0 -10
+n/a
+0 0
+n/a
+0 0
+n/a
+0 0
+27 A meteor destroys the nearby city. Fertiliser prices go up.
+1
+Your tree is sad. Affection decreased.
+1 -10
+n/a
+0 0
+n/a
+0 0
+n/a
+0 0
+28 Pests infest part of your tree. Grudgingly, you have to cut off part of your tree.
+1
+Your tree shrinks by a decimeter.
+0 -10
+n/a
+0 0
+n/a
+0 0
+n/a
+0 0
+29 A lightning strike hits your tree and part of it breaks off.
+1
+Your tree shrinks by a decimeter.
+0 -10
+n/a
+0 0
+n/a
+0 0
+n/a
+0 0
+30 News arrives that Elon Musk finally made it to Mars.
+1
+Your tree grows two decimeters striving to reach Mars too.
+0 20
+n/a
+0 0
+n/a
+0 0
+n/a
+0 0
+31 Animal Crossing for the Switch came out today. You spend all day playing it with your tree.
+1
+Your tree's affection increased after spending quality time with you.
+1 10
+n/a
+0 0
+n/a
+0 0
+n/a
+0 0
+32 You found an albino squirrel in the tree today.
+1
+Your tree grows by a decimeter.
+0 10
+n/a
+0 0
+n/a
+0 0
+n/a
+0 0
+33 You fell out of the tree today, but it caught you by your feet.
+1
+Your relationship deepens.
+1 10
+n/a
+0 0
+n/a
+0 0
+n/a
+0 0
+34 You found a four leaf clover by your tree's roots. Aren't you lucky!
+1
+Your tree grows by five cm.
+0 5
+n/a
+0 0
+n/a
+0 0
+n/a
+0 0
+35 A shooting star appears. You wish that the tree grows larger.
+1
+Your tree grows by a decimeter!
+0 10
+n/a
+0 0
+n/a
+0 0
+n/a
+0 0
