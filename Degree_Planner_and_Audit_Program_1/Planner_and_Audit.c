@@ -120,6 +120,47 @@ void closeWriteFile(char * inFilePath, char * copyFilePath)
 }
 
 /**
+ * backup saves the current file progress as a copy in the same folder - easily accessible to restore the original.
+ */
+void backup()
+{
+    int check = 0;
+    char * strPointer, line[50];
+    //implementation of writing copy for courseFile
+    readFile(filePath);
+    //altered WriteFile implementation
+    strncpy(filePathC, filePath, FILEPATHSIZE);
+    strPointer = strstr(filePathC, ".txt");
+    strncpy(strPointer, " - Copy.txt", 11);
+    copyfile = fopen(filePathC, "w");
+    if(copyfile == NULL)
+    {
+        printf("fopen failed. File pointer NULL err - %s.\n", filePath);
+        exit(0);
+    }
+    while(fgets(line, sizeof(line), infile) != NULL)
+            fputs(line, copyfile);
+    closeFile();
+    fclose(copyfile);
+    //implementation of writing copy for planningCourseFile
+    readFile(pFilePath);
+    //altered WriteFile implementation
+    strncpy(pFilePathC, pFilePath, FILEPATHSIZE);
+    strPointer = strstr(pFilePathC, ".txt");
+    strncpy(strPointer, " - Copy.txt", 11);
+    copyfile = fopen(pFilePathC, "w");
+    if(copyfile == NULL)
+    {
+        printf("fopen failed. File pointer NULL err - %s.\n", pFilePath);
+        exit(0);
+    }
+    while(fgets(line, sizeof(line), infile) != NULL)
+        fputs(line, copyfile);
+    closeFile();
+    fclose(copyfile);
+}
+
+/**
  * displayCoursework prints to stdout the contents in file.
  */
 void displayCoursework()
@@ -186,7 +227,9 @@ int removeCourse(char courseName[])
     //remove \n
     size_t noNewline = strcspn(courseName, "\n");
     courseName[noNewline] = '\0';
-
+    //empty string case
+    if(courseName[0] == '\0')
+        return check;
     //implementation of writing to new file
     readFile(filePath);
     writeFile(filePath, filePathC);
@@ -223,6 +266,10 @@ int editCourse(char courseName[], char letterGrd[], char creditHr[])
     letterGrd[noNewline] = '\0';
     noNewline = strcspn(creditHr, "\n");
     creditHr[noNewline] = '\0';
+
+    //empty string case
+    if((courseName[0] == '\0') || (letterGrd[0] == '\0') || (creditHr[0] == '\0'))
+        return check;
 
     //implementation of writing to new file
     readFile(filePath);
@@ -552,7 +599,9 @@ int removePCourse(char courseName[])
     //remove \n
     size_t noNewline = strcspn(courseName, "\n");
     courseName[noNewline] = '\0';
-
+    //empty string case
+    if(courseName[0] == '\0')
+        return check;
     //implementation of writing to new file
     readFile(pFilePath);
     writeFile(pFilePath, pFilePathC);

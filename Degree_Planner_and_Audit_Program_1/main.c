@@ -12,10 +12,13 @@
  * c programming language.
  * Matthew Yu
  * V1.1 created 1/2/18
+ * V1.2 WORKING 1/----
  * V1.3 WORKING 2/5/18
+ * V1.4 WORKING 4/7/18
  *
  * V1.2 Fix to Check GPA, added NA coursework to grade letters that don't count to GPA, hours
  * V1.3 Bugfix issue with planning coursework function, adding courses to Spring2019 and beyond prints a semester late, duplicate Summer2019
+ * V1.4 Bugfix issue with deleting file contents by entering empty strings into input, added Backup function
  *
  * DOCUMENTATION NOTICE: This program requires the files OfficialCoursework.txt
  * and PlanningCoursework.txt in the same folder as the .exe. Functions of the
@@ -53,14 +56,15 @@ int main()
         printf("Plan Coursework ---------------------------- 2\n");
         printf("Check GPA ---------------------------------- 3\n");
         printf("Check completion rate ---------------------- 4\n");
-        printf("Exit application --------------------------- 5\n");
+        printf("Backup Files ------------------------------- 5\n");
+        printf("Exit application --------------------------- 6\n");
         printf("______________________________________________\n\n");
         printf("Enter option here: ");
         while(1)
         {
             fgets(input, INP_BUFF, stdin);
-            if(strcmp(input, "1\n") != 0 && strcmp(input, "2\n") != 0 && strcmp(input, "3\n") != 0 && strcmp(input, "4\n") != 0 && strcmp(input, "5\n") != 0)
-                printf("Invalid input. Enter a number 1-5.\n");
+            if(strcmp(input, "1\n") != 0 && strcmp(input, "2\n") != 0 && strcmp(input, "3\n") != 0 && strcmp(input, "4\n") != 0 && strcmp(input, "5\n") != 0 && strcmp(input, "6\n") != 0)
+                printf("Invalid input. Enter a number 1-6.\n");
             else
                 break;
         }
@@ -190,7 +194,13 @@ int main()
             completionRate = getCompleteRate();
             printf("Your completion rate is %.1f%%.\n", completionRate);
         }
-        else if(strcmp(input, "5\n") == 0) //Exit Application
+        else if(strcmp(input, "5\n") == 0)
+        {
+            printf("Backing up files...\n");
+            backup();
+            printf("Backed up! Check your program folder for a file labeled with the extension - \"copy\".\n");
+        }
+        else if(strcmp(input, "6\n") == 0) //Exit Application
         {
             printf("Thank you for using the Degree Planner and Audit Program.\n");
             printf("Created 2018, Matthew Yu\n");

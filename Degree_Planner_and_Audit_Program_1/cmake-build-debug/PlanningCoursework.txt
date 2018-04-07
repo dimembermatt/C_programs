@@ -16,6 +16,8 @@ GOV310L
 GOV312
 
 +Fall2018
+EE411
+EE312
 
 +Spring2019
 

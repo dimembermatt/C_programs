@@ -12,6 +12,7 @@ void appendFile(char * filePath);
 void closeFile();
 void writeFile(char * filePath, char * copyFilePath);
 void closeWriteFile(char * inFilePath, char * copyFilePath);
+void backup();
 
 //Official Coursework functions
 void displayCoursework();
