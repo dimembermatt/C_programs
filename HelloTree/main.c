@@ -33,7 +33,7 @@ char fileName[150];
 
 //main Actor of game - stats change based on events and actions
 typedef struct Tree{
-    int height;        //in unit cm
+    int height;         //in unit cm
     int calamity;
     int love;
     int alive;          //0 = dead, 1 = alive
